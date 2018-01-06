@@ -864,8 +864,12 @@ add_forecast_cell(plugin_data *data,
     g_free(rawvalue);
     label = gtk_label_new(NULL);
     gtk_label_set_markup(GTK_LABEL(label), value);
-    if (!(day % 2))
+
+    // Alternate text colour every other row
+    /*if (!(day % 2)) {
         gtk_widget_modify_fg(GTK_WIDGET(label), GTK_STATE_NORMAL, &black);
+    }*/
+
     gtk_box_pack_start(GTK_BOX(box), GTK_WIDGET(label), TRUE, TRUE, 0);
     g_free(value);
 
@@ -876,8 +880,12 @@ add_forecast_cell(plugin_data *data,
                             get_unit(data->units, TEMPERATURE));
     g_free(rawvalue);
     label = gtk_label_new(value);
-    if (!(day % 2))
+
+    // Alternate text colour every other row
+    /*if (!(day % 2)) {
         gtk_widget_modify_fg(GTK_WIDGET(label), GTK_STATE_NORMAL, &black);
+    }*/
+
     gtk_box_pack_start(GTK_BOX(box), GTK_WIDGET(label), TRUE, TRUE, 0);
     g_free(value);
 
@@ -891,8 +899,12 @@ add_forecast_cell(plugin_data *data,
     g_free(wind_speed);
     g_free(wind_direction);
     label = gtk_label_new(value);
-    if (!(day % 2))
+
+    // Alternate text colour every other row
+    /*if (!(day % 2)) {
         gtk_widget_modify_fg(GTK_WIDGET(label), GTK_STATE_NORMAL, &black);
+    }*/
+
     gtk_box_pack_start(GTK_BOX(box), label, TRUE, TRUE, 0);
     g_free(value);
 
